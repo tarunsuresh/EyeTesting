@@ -9,12 +9,22 @@ function preload(){
 function setup() {
   createCanvas(displayWidth,displayHeight);
 
-  wordGen  = new WordGen();     
+  wordGen  = new WordGen();
+  
+  var playButton = createButton("play");
+  playButton.style("backgroundColor","blue");
+  playButton.position(displayWidth/2-20,displayHeight/2+20);
+  playButton.size(100,100);
 
+  playButton.mousePressed(()=>{
+
+    playButton.hide();
   //creating play button 
-  var playButton = new levelButton(displayWidth/2-20, displayHeight/2+20);
+  var levelButton = new LevelButton(displayWidth/2-20, displayHeight/2+20);
  
-  playButton.display();
+  levelButton.display();
+
+});
 /*
   //creating object of level1
   level1 = new Level1();

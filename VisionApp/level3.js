@@ -7,6 +7,8 @@ class Level3{
         this.flag = 0;
         this.timer = 10;
         this.back = createButton("back");
+        this.currentQuestion = 0;
+        this.maxQuestions = 2;
     }
 
      hideText(){
@@ -54,15 +56,25 @@ class Level3{
         this.nextButton.mousePressed(()=>{
             this.flag++;
             var textSt = this.input.value();
+            this.currentQuestion++;
             if(textSt.trim().toLowerCase() === randText.toLowerCase()){
                 score++;
+                
             } 
+
+
+
+            setTimeout(function () {
+                that.word.hide();
+            }, 5000);
+
             console.log(score);
             randText = wordGen.getRandomWord(5);
             this.word.html(randText);
+            this.word.show();
             //this.word.position(displayWidth/2-20, displayHeight/2-20);
             
-            if(score === 2){
+            if( this.maxQuestions === this.currentQuestion){
                 console.log(score);
                 this.input.hide();
                 this.nextButton.hide();
@@ -73,19 +85,19 @@ class Level3{
             }       
                 
         }); 
-        /*
-            back.mousePressed(()=>{
-            level1button = createButton("level1");
-            level1Button.position(displayWidth/2-130, displayHeight/2+20);
-            level2Button = createButton("level2");
-            level2Button.position(displayWidth/2-20, displayHeight/2+20);
-            level3Button = createButton("level3");
-            level3Button.position(displayWidth/2+80, displayHeight/2+20);
-        })
-        */
 
+        this.back.mousePressed(()=>{
+            console.log("back");
+            this.back.hide();
+            var levelButton = new LevelButton(displayWidth/2-20, displayHeight/2+20);
+            levelButton.display();
+        });
 
 
     }
+
+    
+    
+
 }
 

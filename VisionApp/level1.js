@@ -41,10 +41,12 @@ class Level1{
                 textSize(20);
                 text("you won the level ",displayWidth/2+30,displayHeight/2-30);
                 this.word.hide();
-                var back = createButton("back");
+                var this.back = createButton("back");
                 back.position(displayWidth/2-80,displayHeight/2+20);
             }       
                 
         }); 
+
+        
     }
 }
