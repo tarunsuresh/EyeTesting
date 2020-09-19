@@ -5,10 +5,13 @@ class Level1{
         this.nextButton = createButton("next");
         this.word = createElement("h2");
         this.flag = 0;
+        this.back = createButton("back");
+       
     }
 
     display(){
         this.input.position(displayWidth/2-80,displayHeight/2+20);
+        this.back.position(displayWidth/2-80,displayHeight/2+20);
 
        //displaying button 3 and the word
         this.nextButton.position(displayWidth/2-20, displayHeight/2+60);
@@ -41,12 +44,24 @@ class Level1{
                 textSize(20);
                 text("you won the level ",displayWidth/2+30,displayHeight/2-30);
                 this.word.hide();
-                var this.back = createButton("back");
-                back.position(displayWidth/2-80,displayHeight/2+20);
-            }       
-                
-        }); 
+              
+               
+
+                this.back.mousePressed(()=>{
+                    console.log("back");
+                    this.back.hide();
+                    var levelButton = new LevelButton(displayWidth/2-20, displayHeight/2+20);
+                    levelButton.display();
+                });
+
+    
+
+            } 
+
 
         
+    
+        }
     }
-}
+
+}    

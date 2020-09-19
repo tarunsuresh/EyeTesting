@@ -9,6 +9,8 @@ function preload(){
 function setup() {
   createCanvas(displayWidth,displayHeight);
 
+  level = new Level();
+
   wordGen  = new WordGen();
   
   var playButton = createButton("play");
