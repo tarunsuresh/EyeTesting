@@ -104,6 +104,9 @@ class Level{
                     this.viewScore.position(displayWidth/2-80,displayHeight/2+20);
                     this.viewScore.mousePressed(()=>{
                         var scoreBoard = new ScoreBoard();
+                        scoreBoard.display();
+                        score.hide();
+                        this.viewScore.hide();
                     });
                 }
             }       
