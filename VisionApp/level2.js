@@ -5,6 +5,8 @@ class Level2{
         this.nextButton = createButton("next");
         this.word = createElement("h2");
         this.flag = 0;
+        this.currentQuestion = 0;
+        this.maxQuestions = 2;
     }
 
     display(){
@@ -24,6 +26,7 @@ class Level2{
         //}
        
         this.nextButton.mousePressed(()=>{
+            this.currentQuestion++;
             this.flag++;
             var textSt = this.input.value();
             if(textSt.trim().toLowerCase() === randText.toLowerCase()){
@@ -34,7 +37,7 @@ class Level2{
             this.word.html(randText);
             //this.word.position(displayWidth/2-20, displayHeight/2-20);
             
-            if(score === 2){
+            if(this.currentQuestion === this.maxQuestions){
                 console.log(score);
                 this.input.hide();
                 this.nextButton.hide();
