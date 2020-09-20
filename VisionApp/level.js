@@ -4,11 +4,10 @@ class Level{
         this.input = createInput();
         this.nextButton = createButton("next");
         this.word = createElement("h2");
-        this.flag = 0;
-        this.timer = 10;
         this.back = createButton("back");
         this.currentQuestion = 0;
         this.maxQuestions = 2;
+        this.viewScore= createButton("viewScore");
     }
 
      hideText(){
@@ -18,7 +17,9 @@ class Level{
     }
 
     display(currentLevel){
-
+        this.viewScore.hide();
+        this.currentQuestion = 1;
+        this.maxQuestions = 5;
 
          
         this.input.show();
@@ -67,13 +68,14 @@ class Level{
         //}
        
         this.nextButton.mousePressed(()=>{
-            this.flag++;
             var textSt = this.input.value();
             this.currentQuestion++;
             if(textSt.trim().toLowerCase() === randText.toLowerCase()){
                 score++;
                 
             } 
+
+            this.input.value("");
 
             if(currentLevel === 3){
                 var that = this;
@@ -88,14 +90,22 @@ class Level{
             this.word.show();
             //this.word.position(displayWidth/2-20, displayHeight/2-20);
             
-            if( this.maxQuestions === this.currentQuestion){
+            if(this.currentQuestion > this.maxQuestions){
                 console.log(score);
                 this.input.hide();
                 this.nextButton.hide();
                 textSize(20);
                 text("you won the level ",displayWidth/2+30,displayHeight/2-30);
                 this.word.hide();
-               this.back.position(displayWidth/2-80,displayHeight/2+20);
+                this.back.position(displayWidth/2-80,displayHeight/2+20);
+                this.back.show();
+                if(currentLevel === 3){
+                    this.viewScore.show();
+                    this.viewScore.position(displayWidth/2-80,displayHeight/2+20);
+                    this.viewScore.mousePressed(()=>{
+                        var scoreBoard = new ScoreBoard();
+                    });
+                }
             }       
                 
         }); 
