@@ -1,5 +1,6 @@
 var backGround,imgOne;
 var level1,wordGen,level2,level3;
+var gameState =0;
 var score = 0;
 function preload(){
   backGround = loadImage("background.png");
