@@ -12,17 +12,17 @@ class ScoreBoard{
         //text(score + " / 15",displayWidth/2-20,displayHeight/2+20);
         
         this.text1.html("Congratulations! You have completed vision test");
-        this.text1.position(displayWidth/2+10,displayHeight/2-150);
+        this.text1.position(displayWidth/2-100,displayHeight/2-300);
         this.text1.style("color","red");
 
         this.text2.html("Your score is : " + score + " / 15");
-        this.text2.position(displayWidth/2-20,displayHeight/2-50);
+        this.text2.position(displayWidth/2-50,displayHeight/2-190);
         this.text2.style("color","red");
 
         if(score <= 5){
            // text("You have to test your eyes",displayHeight/2-20,displayHeight/2+40);
            this.text3.html("You have to test your eyes");
-           this.text3.position(displayHeight/2-20,displayHeight/2+40);
+           this.text3.position(displayHeight/2+200,displayHeight/2+40);
            this.text3.style("color","red");
    
         }

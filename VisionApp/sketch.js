@@ -52,7 +52,7 @@ function draw() {
 
   fill("blue");
   
-  textSize(20);
-  text("score :" + score,displayWidth/2-20,displayHeight/2-150);
+  //textSize(20);
+ // text("score :" + score,displayWidth/2-20,displayHeight/2-150);
   
 }
