@@ -33,13 +33,12 @@ class LevelButton{
         
         if(gameState === 1){
             this.level2Button.mousePressed(()=>{
-                if(score >= 1){
+                
                     level.display(2);
                     this.level1Button.hide();
                     this.level2Button.hide();
                     this.level3Button.hide();
                     gameState++;
-                }
 
             });
         }    
@@ -52,13 +51,13 @@ class LevelButton{
 
         this.level3Button.mousePressed(()=>{
             if(gameState === 2 ){
-                if(score >= 4){
+              //  if(score >= 4){
                     level.display(3);
                     this.level1Button.hide();
                     this.level2Button.hide();
                     this.level3Button.hide();
                     gameState++;
-                }
+               // }
             }
         });
      

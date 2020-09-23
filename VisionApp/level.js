@@ -1,6 +1,7 @@
 class Level{
 
     constructor(){
+        this.levelMessage = createElement("h2");
         this.info1 = createElement("h1");
         this.info2 = createElement("h1");
         this.info3 = createElement("h1");
@@ -20,6 +21,7 @@ class Level{
     }
 
     display(currentLevel){
+        this.levelMessage.hide();
         this.viewScore.hide();
         this.currentQuestion = 1;
         this.maxQuestions = 5;
@@ -47,6 +49,7 @@ class Level{
 
         if(score === 0){
             if(currentLevel === 1){
+           // this.levelMessage.hide();
             this.word.style("fontSize","20px");
             this.info1.html("text your answers in textbox");
             this.info1.position(displayWidth/2+20,displayHeight/2+100);
@@ -79,6 +82,7 @@ class Level{
 
         if(score === 2){
             if(currentLevel === 2){
+               // this.levelMessage.hide();
                 this.word.style("fontSize","15px");
                 this.info2.html("text your answers in textbox");
                 this.info2.position(displayWidth/2+20,displayHeight/2+100);
@@ -114,6 +118,9 @@ class Level{
                 console.log(score);
                 this.input.hide();
                 this.nextButton.hide();
+               // this.levelMessage.html("level completed");
+                //this.levelMessage.position(displayWidth/2+20,displayHeight/2+100);
+                //this.levelMessage.style("color","red")
                 this.word.hide();
                 this.back.position(displayWidth/2-80,displayHeight/2+20);
                 this.back.show();
